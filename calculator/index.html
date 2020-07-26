@@ -1,0 +1,80 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            background: blue;
+            color: white;
+        }
+
+        html {
+            background: url('https://www.mockupworld.co/wp-content/uploads/dynamic/2019/02/free-macbook-pro-side-view-mockup-psd-536x0-c-default.jpg')
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Calculator</h3>
+    <br>
+    <div>
+        <input id="first" type="number">
+        <input id="second" type="number">
+    </div>
+    <br>
+    <div>
+        <button onclick="sum()">Add</button>
+        <button onclick="Difference()">Difference</button>
+        <button onclick="Multiply()">Multiply</button>
+        <button onclick="Divide()">Divide</button>
+    </div>
+    <div>
+        <h1>Result</h1>
+        <span id="result"></span>
+        <h1>Actual Sum</h1>
+        <span id="Actual Sum"></span>
+        <h1>Modified Sum</h1>
+        <span id="Modified Sum"></span>
+
+    </div>
+    <script>
+        function sum() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var sum = a + b;
+            document.getElementById("Actual Sum").innerHTML = sum;
+            if (sum < 21) {
+                document.getElementById("Modified Sum").innerHTML = sum;
+            }
+            else if (sum == 21) {
+                document.getElementById("Modified Sum").innerHTML = sum * 2;
+            }
+            else {
+                document.getElementById("Modified Sum").innerHTML = sum * 3;
+            }
+
+        }
+        function Difference() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var Difference = a - b;
+            document.getElementById("result").innerHTML = Difference;
+        }
+        function Multiply() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var Multiply = a * b;
+            document.getElementById("result").innerHTML = Multiply;
+        } function Divide() {
+            var a = Number(document.getElementById("first").value);
+            var b = Number(document.getElementById("second").value);
+            var Divide = a / b;
+            document.getElementById("result").innerHTML = Divide;
+        }
+    </script>
+</body>
+
+</html>
